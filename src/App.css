@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
+
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
+  overflow: overlay;
+}
+body::-webkit-scrollbar {
+  width: 5px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body::-webkit-scrollbar-thumb {
+  background-color: #e6e9f0bd;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-container {
+  height: 100vh;
+  width: 100%;
+}
+
+/* snow background and name/title */
+.intro-box {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 2px;
+  background: 
+    linear-gradient(
+      /* 40deg, */
+      rgba(0,0,0,0.3),
+      rgba(0, 40, 105, 0.3)
+    )
+  ;
+}
+.intro-container {
+  max-width: 100vw;
+}
+.intro-name {
+  font-size: 3.5em;
+}
+.intro-title {
+  font-size: 2.0em;
+}
+.main-body-box {
+  height: auto;
+}
+.about-box {
+  scroll-margin-top: 64.5px;
+}
+.projects-box {
+  scroll-margin-top: 64.5px;
+}
+.skills-box {
+  scroll-margin-top: 64.5px;
+}
+.contact-box {
+  scroll-margin-top: 64.5px;
 }
 
-.App-link {
-  color: #61dafb;
-}
+@media (max-width: 900px) {
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
