@@ -1,0 +1,161 @@
+/* navbar begin */
+.nav-container{
+  display: flex;
+  position: fixed!important;
+  top: 0;
+  width: 100vw;
+  background-color: transparent;
+  border: none;
+  color: white;
+  z-index: 100;
+  height: 65px;
+  font-family: "League Spartan", Helvetica, Arial, sans-serif;
+}
+.nav-container.transpBg{
+  transition: background-color 0.4s ease-in-out;
+  background-color: transparent;
+}
+.nav-container.colorBg{
+  transition: background-color 0.4s ease-in-out;
+  background-color: #313131fa;
+}
+
+/* JK logo /home  */
+.navbar-home{
+  display: flex;
+  height: 100%;
+  position: relative;
+  margin-right: auto;
+  font-weight: bold;
+}
+.navbar-home a {
+  text-decoration: none;
+  color: white;
+  border: none;
+  background-color: transparent;
+  font-size: 1.4em;
+  margin-top: auto;
+  margin-left: 30px;
+  margin-bottom: auto;
+  cursor: pointer;
+}
+.navbar-home a:hover {
+  transition: color 0.4s ease-in-out;
+  color: #FFCC66;
+}
+
+/* hide toggle button */
+.toggle-button {
+  display: none;
+}
+
+/* collapsible menu */
+.nav-menu {
+  display: none;
+}
+
+/* regular navbar menu */
+.nav-menu-fs {
+  height: 100%;
+  position: relative;
+  margin-left: auto;
+}
+.nav-menu-fs-sub {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4em;
+}
+.nav-menu-fs-sub a {
+  text-decoration: none;
+  margin-right: 40px;
+  color: white;
+  background-color: transparent;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+.nav-menu-fs-sub a:hover {
+  transition: color 0.4s ease-in-out;
+  color: #FFCC66;
+}
+
+/* navbar collapses @ 900px */
+@media (max-width: 900px) {
+    .toggle-button {
+      display: flex;
+      height: 100%; 
+      position: relative;
+      min-width: 65px;
+      margin-left: auto;
+    }
+    .toggle-button a {
+      text-decoration: none;
+      margin-top: auto;
+      margin-bottom: auto;
+      background-color: transparent;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+    }
+    .toggle-button a:hover {
+      transition: color 0.4s ease-in-out;
+      color: #FFCC66;
+    }
+  
+    /* nav expanded menu */
+    .nav-menu-fs {
+      display: none;
+    }
+    .nav-menu {
+      display: block;
+    }
+    .nav-ul {
+      display: block;
+      position: fixed!important;
+      height: calc(100vh - 65px);
+      width: 25%;
+      min-width: 150px;
+      top: 65px;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      padding: 0;
+      transform: translate3d(-100vw, 0, 0);
+      transition: transform 0.4s cubic-bezier(0, .52, 0, 1);
+    }
+    .nav-menu ul li {
+      width: 100%;
+      display: block;
+      list-style-type: none;
+      margin-top: 20px;
+      margin-left: 30px;
+    }
+    .nav-menu ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1.4em;
+      background-color: transparent;
+      border: none;
+    }
+    .nav-menu ul li a:hover {
+      transition: color 0.4s ease-in-out;
+      color: #FFCC66;
+      cursor: pointer;
+    }
+    .nav-menu.expanded ul {
+        transform: translate3d(0vw, 0, 0);
+        transition: all 0.4s cubic-bezier(0, .52, 0, 1);
+    }
+    .nav-ul.transpBg{
+      transition: all 0.4s ease-in-out;
+      background-color: transparent;
+    }
+    .nav-ul.colorBg{
+      transition: all 0.4s ease-in-out;
+      background-color: #313131fa;
+    }
+}
