@@ -1,0 +1,27 @@
+
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "League Spartan", Helvetica, Arial, sans-serif;
+    margin: auto;
+    color: aliceblue;
+}
+.intro-name {
+    display: block;
+    font-size: 6em!important;
+    font-weight: 800;
+    cursor: default;
+}
+.intro-title {
+    font-size: 2.5em!important;
+    font-weight: 700;
+    cursor: default;
+}
+
+@media (max-width: 900px) {
+    .intro-title{
+        width: 90%;
+    }
+}
