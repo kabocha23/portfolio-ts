@@ -1,0 +1,90 @@
+.card {
+    max-width: 400px;
+}
+
+.media {
+    height: 0;
+    padding-top: 56.25%;
+}
+
+.projects-header-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    width: 100%;
+    background: 
+        linear-gradient(
+            -20deg, 
+            rgba(0,0,0,0.3),
+            rgba(0, 40, 105, 0.8)
+    );
+    background-attachment: fixed;
+    background-size: cover; 
+}
+
+.projects-header {
+    color: aliceblue;
+    font-size: 5em;
+    font-family: "League Spartan", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    cursor: default;
+}
+
+.projects-content-box {
+    display: flex;
+    flex-flow: row wrap;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px 0px;
+    background: 
+    linear-gradient(
+        rgb(243, 243, 243),
+        rgb(45, 51, 176, 2.26701)
+    );
+}
+
+.indi-proj {
+    margin: 10px auto;
+    width: 300px;
+    cursor: default;
+}
+.indi-proj h1 {
+    font-size: 1.0em;
+    margin: 5px auto;    
+    font-weight: bold;
+    text-align: center;
+}
+.indi-proj h2 {
+    font-size: 0.9em;
+    margin: 5px auto;
+    font-style: italic;
+    text-align: center;
+}
+.indi-proj p {
+    font-size: 0.9em;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#more-to-come {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px;    
+    color: white;
+    font-size: 1.5em;
+    font-style: italic;
+    cursor: default;
+}
+
+
+@media(max-width: 500px) {
+    .projects-header {
+        text-align: center;
+    }
+    .projects-content-box {
+        padding: 5% 0;
+    }
+}
