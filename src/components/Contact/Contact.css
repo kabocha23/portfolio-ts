@@ -1,0 +1,192 @@
+.contact-container {
+    min-height: calc(100vh - 185px);
+    background-color: rgb(45, 51, 176, 2.26701);
+    font-family: "League Spartan", Helvetica, Arial, sans-serif;
+}
+.contact-sub-container {
+    display: flex;
+    flex-flow: row wrap;
+    min-height: calc(100vh - 185px);
+    width: 100%;
+    max-width: 1281px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* left side of contact section */
+.contact-text {
+    display: flex;
+    flex-flow: column wrap;
+    width: 45%;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+#contact-text-head {
+    font-weight: 800;
+    font-size: 4em;
+}
+#contact-text-subhead {
+    width: 90%;
+    text-align: flex-start;
+    font-size: 20px;
+}
+
+/* right side of contact section */
+.contact-form {
+    display: flex;
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+}
+.contact-form form {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+}
+.contact-form form label {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    color: white;
+    font-size: 1.25em;
+    padding-left: 5px;
+}
+.contact-form input:focus {
+    outline: 2px solid #FFCC66;
+}
+.contact-form textarea:focus {
+    outline: 2px solid #FFCC66;
+}
+
+/* validation messages */
+.validation-entry {
+    font-size: 1em;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+.entry-invalid {
+    color: rgb(255, 68, 68);
+}
+.entry-valid {
+    color: rgb(150, 255, 150)
+}
+
+/* name and email section of contact form */
+.contact-name-email {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    justify-content: space-between;
+}
+.contact-name {
+    width: 48%;
+}
+#contact-name-label {
+    width: 100%;
+}
+#contact-name-input {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 5px;
+    padding: 10px;
+    font-size: 18px;
+}
+.contact-email {
+    width: 48%;
+}
+#contact-email-label {
+    width: 100%;
+}
+#contact-email-input {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 5px;
+    padding: 10px;
+    font-size: 18px;
+}
+/* textarea for Message of email */
+#contact-message {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 5px;
+    padding: 10px;
+    font-size: 18px;
+    overflow: auto;
+}
+textarea {
+    resize: none;
+}
+
+/* send message button of contact form */
+#contact-submit {
+    width: 200px;
+    height: 50px;
+    padding: 14px 24px 16px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #363636;
+    background: #e0e0e0;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 200ms, background 200ms;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+#contact-submit:hover:enabled{
+    transform: translateY(-2px);
+}
+#contact-submit:active:enabled {
+    background-color: #FFCC66;
+    transform: translateY(2px);
+}
+#contact-submit:disabled {
+    opacity: 0.5;
+}
+
+#paper-plane {
+    height: 20px;
+    transform: translate(10px, -1.5px);
+    filter: invert(14%) sepia(1%) saturate(2245%) hue-rotate(348deg) brightness(92%) contrast(78%);
+}
+
+
+
+@media(max-width: 900px) {
+    .contact-container {
+        max-width: 100%;
+    }
+    .contact-text {
+        width: 90%;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #contact-text-head {
+        text-align: center;
+    }
+    #contact-text-subhead {
+        text-align: center;
+    }
+    .contact-form {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10%;
+    }
+    #contact-submit {
+        width: 100%;
+    }
+}
