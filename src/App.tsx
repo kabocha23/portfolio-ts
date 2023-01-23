@@ -12,9 +12,13 @@ import emailjs from "@emailjs/browser";
 import "./App.css";
 
 const App: FC = () => {
-  const [isNavExpanded, setIsNavExpanded] = useState(false);
-  const [navBgColor, setNavBgColor] = useState(false);
-  const [mailerState, setMailerState] = useState({
+  const [isNavExpanded, setIsNavExpanded] = useState<boolean>(false);
+  const [navBgColor, setNavBgColor] = useState<boolean>(false);
+  const [mailerState, setMailerState] = useState<{
+    name: string;
+    email: string;
+    message: string;
+  }>({
     name: "",
     email: "",
     message: "",
@@ -23,9 +27,9 @@ const App: FC = () => {
   const homeRef = useRef<HTMLDivElement>(null);
   const aboutMeRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
-  const featuredProjectRefs = useRef<HTMLDivElement>([]);
+  const featuredProjectRefs = useRef<HTMLDivElement[]>([]);
   const contactRef = useRef<HTMLDivElement>(null);
-  const formRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleHomeClick = () => {
     homeRef.current.scrollIntoView({ behavior: "smooth" });
@@ -134,7 +138,6 @@ const App: FC = () => {
         <div className="contact-box" ref={contactRef}>
           <Contact
             mailerState={mailerState}
-            setMailerState={setMailerState}
             handleEmailStateChange={handleEmailStateChange}
             sendEmail={sendEmail}
             isValidEmail={isValidEmail}
