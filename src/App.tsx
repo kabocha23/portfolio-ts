@@ -32,23 +32,31 @@ const App: FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
   const handleHomeClick = () => {
-    homeRef.current.scrollIntoView({ behavior: "smooth" });
-    setIsNavExpanded(false);
+    if (homeRef.current) {
+      homeRef.current.scrollIntoView({ behavior: "smooth" });
+      setIsNavExpanded(false);
+    }
   };
 
   const handleAboutClick = () => {
-    aboutMeRef.current.scrollIntoView({ behavior: "smooth" });
-    setIsNavExpanded(false);
+    if (aboutMeRef.current) {
+      aboutMeRef.current.scrollIntoView({ behavior: "smooth" });
+      setIsNavExpanded(false);
+    }
   };
 
   const handleProjectsClick = () => {
-    projectsRef.current.scrollIntoView({ behavior: "smooth" });
-    setIsNavExpanded(false);
+    if (projectsRef.current) {
+      projectsRef.current.scrollIntoView({ behavior: "smooth" });
+      setIsNavExpanded(false);
+    }
   };
 
   const handleContactClick = () => {
-    contactRef.current.scrollIntoView({ behavior: "smooth" });
-    setIsNavExpanded(false);
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: "smooth" });
+      setIsNavExpanded(false);
+    }
   };
 
   const isValidEmail = (email) => {
@@ -78,10 +86,10 @@ const App: FC = () => {
     } else {
       emailjs
         .sendForm(
-          process.env.REACT_APP_EMAILJS_SERVICE_ID,
-          process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-          formRef.current,
-          process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+          process.env.REACT_APP_EMAILJS_SERVICE_ID as string,
+          process.env.REACT_APP_EMAILJS_TEMPLATE_ID as string,
+          formRef.current as HTMLFormElement,
+          process.env.REACT_APP_EMAILJS_PUBLIC_KEY as string
         )
         .then(
           (result) => {
