@@ -1,4 +1,4 @@
-import React, { FC, createRef } from "react";
+import React, { FC, Ref, createRef, useEffect } from "react";
 import useIntersection from "../../hooks/useIntersection";
 import { Parallax } from "react-parallax";
 import koSamuiBg from "../../Static/img/kosamui2.jpg";
@@ -16,7 +16,7 @@ interface ProjectsProps {
     sourceCode: string;
     liveDemo: string;
   }[];
-  featuredProjectRefs: React.Ref<HTMLDivElement[]>;
+  featuredProjectRefs: Ref<HTMLDivElement[]>;
 }
 
 const Projects: FC<ProjectsProps> = ({ projectsData, featuredProjectRefs }) => {
@@ -39,69 +39,73 @@ const Projects: FC<ProjectsProps> = ({ projectsData, featuredProjectRefs }) => {
     "-150px"
   );
 
+  useEffect(() => {
+    console.log(featuredProjectRefs.current);
+  });
+
   if (inViewport0) {
     let el = document.getElementById("id-0");
-    if (el.className === "project-container isNotVisibleLeft") {
+    if (el && el.className === "project-container isNotVisibleLeft") {
       el.className = "project-container isVisibleLeft";
     }
   }
   if (inViewport1) {
     let el = document.getElementById("id-1");
-    if (el.className === "project-container isNotVisibleRight") {
+    if (el && el.className === "project-container isNotVisibleRight") {
       el.className = "project-container isVisibleRight";
     }
   }
   if (inViewport2) {
     let el = document.getElementById("id-2");
-    if (el.className === "project-container isNotVisibleLeft") {
+    if (el && el.className === "project-container isNotVisibleLeft") {
       el.className = "project-container isVisibleLeft";
     }
   }
   if (inViewport3) {
     let el = document.getElementById("id-3");
-    if (el.className === "project-container isNotVisibleRight") {
+    if (el && el.className === "project-container isNotVisibleRight") {
       el.className = "project-container isVisibleRight";
     }
   }
   if (inViewport4) {
     let el = document.getElementById("id-4");
-    if (el.className === "project-container isNotVisibleLeft") {
+    if (el && el.className === "project-container isNotVisibleLeft") {
       el.className = "project-container isVisibleLeft";
     }
   }
   if (inViewport5) {
     let el = document.getElementById("id-5");
-    if (el.className === "project-container isNotVisibleRight") {
+    if (el && el.className === "project-container isNotVisibleRight") {
       el.className = "project-container isVisibleRight";
     }
   }
   if (inViewport6) {
     let el = document.getElementById("id-6");
-    if (el.className === "project-container isNotVisibleLeft") {
+    if (el && el.className === "project-container isNotVisibleLeft") {
       el.className = "project-container isVisibleLeft";
     }
   }
   if (inViewport7) {
     let el = document.getElementById("id-7");
-    if (el.className === "project-container isNotVisibleRight") {
+    if (el && el.className === "project-container isNotVisibleRight") {
       el.className = "project-container isVisibleRight";
     }
   }
   if (inViewport8) {
     let el = document.getElementById("id-8");
-    if (el.className === "project-container isNotVisibleLeft") {
+    if (el && el.className === "project-container isNotVisibleLeft") {
       el.className = "project-container isVisibleLeft";
     }
   }
   if (inViewport9) {
     let el = document.getElementById("id-9");
-    if (el.className === "project-container isNotVisibleRight") {
+    if (el && el.className === "project-container isNotVisibleRight") {
       el.className = "project-container isVisibleRight";
     }
   }
   if (inViewport10) {
     let el = document.getElementById("id-10");
-    if (el.className === "project-container isNotVisibleLeft") {
+    if (el && el.className === "project-container isNotVisibleLeft") {
       el.className = "project-container isVisibleLeft";
     }
   }
