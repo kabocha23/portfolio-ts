@@ -10,7 +10,6 @@ interface FeaturedProjectsProps {
   description: string;
   sourceCode: string;
   liveDemo: string;
-  fPRef: HTMLDivElement;
 }
 
 const FeaturedProject = forwardRef<HTMLDivElement, FeaturedProjectsProps>(
@@ -25,10 +24,10 @@ const FeaturedProject = forwardRef<HTMLDivElement, FeaturedProjectsProps>(
       sourceCode,
       liveDemo,
     },
-    fPRef
+    featuredProjectRefs
   ) => {
     return (
-      <div className="project-ref-detect" ref={fPRef}>
+      <div className="project-ref-detect" ref={featuredProjectRefs}>
         <div
           className={
             pdId % 2 === 0
