@@ -24,10 +24,10 @@ const FeaturedProject = forwardRef<HTMLDivElement, FeaturedProjectsProps>(
       sourceCode,
       liveDemo,
     },
-    ref
+    featuredProjectRefs
   ) => {
     return (
-      <div className="project-ref-detect" ref={ref}>
+      <div className="project-ref-detect" ref={featuredProjectRefs}>
         <div
           className={
             pdId % 2 === 0
