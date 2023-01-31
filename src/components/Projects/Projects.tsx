@@ -16,13 +16,15 @@ interface ProjectsProps {
     sourceCode: string;
     liveDemo: string;
   }[];
-  featuredProjectRefs: Ref<HTMLDivElement[]>;
+  featuredProjectRefs: Ref<HTMLDivElement>;
 }
 
 const Projects: FC<ProjectsProps> = ({ projectsData, featuredProjectRefs }) => {
-  featuredProjectRefs.current = projectsData.map(
-    (proj) => featuredProjectRefs.current[proj.id] ?? createRef()
-  );
+  if (featuredProjectRefs.current != null) {
+    featuredProjectRefs.current = projectsData.map(
+      (proj) => featuredProjectRefs.current[proj.id] ?? createRef()
+    );
+  }
 
   const inViewport0 = useIntersection(featuredProjectRefs.current[0], "-150px");
   const inViewport1 = useIntersection(featuredProjectRefs.current[1], "-150px");
