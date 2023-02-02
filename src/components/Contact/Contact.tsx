@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC, ChangeEventHandler, FormEventHandler, LegacyRef } from "react";
 import paperPlane from "../../Static/img/paper-plane.svg";
 import "./Contact.css";
 
@@ -8,12 +8,12 @@ interface ContactProps {
     email: string;
     message: string;
   };
-  handleEmailStateChange: React.ChangeEventHandler<
+  handleEmailStateChange: ChangeEventHandler<
     HTMLInputElement | HTMLTextAreaElement
   >;
-  sendEmail: React.FormEventHandler<HTMLFormElement>;
+  sendEmail: FormEventHandler<HTMLFormElement>;
   isValidEmail: (string) => boolean;
-  formRef: React.LegacyRef<HTMLFormElement> | undefined;
+  formRef: LegacyRef<HTMLFormElement> | undefined;
 }
 
 const Contact: FC<ContactProps> = ({
