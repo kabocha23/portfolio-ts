@@ -135,7 +135,7 @@ const Projects: FC<ProjectsProps> = ({ projectsData, featuredProjectRefs }) => {
           .map((projectsData) => (
             <FeaturedProject
               key={`key-${projectsData.id}`}
-              fPRef={mutFPRef.current[projectsData.id]}
+              ref={mutFPRef.current[projectsData.id]}
               pdId={projectsData.id}
               image={projectsData.image}
               title={projectsData.title}

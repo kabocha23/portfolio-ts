@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import Skills from "../Skills/Skills";
 import profilePhoto from "../../Static/img/profile-photo.jpg";
 import emailIcon from "../../Static/img/email-icon2.png";

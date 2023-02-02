@@ -1,4 +1,4 @@
-import React, { FC, useState, useRef } from "react";
+import { FC, useState, useRef } from "react";
 import projectsData from "./data/projectsData";
 import Navbar from "./components/Navbar/Navbar";
 import Intro from "./components/Intro/Intro";
