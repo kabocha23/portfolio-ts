@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import { forwardRef, useEffect } from "react";
 import "./FeaturedProject.css";
 
 interface FeaturedProjectsProps {
@@ -24,10 +24,14 @@ const FeaturedProject = forwardRef<HTMLDivElement, FeaturedProjectsProps>(
       sourceCode,
       liveDemo,
     },
-    featuredProjectRefs
+    featuredProjectRef
   ) => {
+    useEffect(() => {
+      console.log(featuredProjectRef);
+    }, [featuredProjectRef]);
+
     return (
-      <div className="project-ref-detect" ref={featuredProjectRefs}>
+      <div className="project-ref-detect" ref={featuredProjectRef}>
         <div
           className={
             pdId % 2 === 0
