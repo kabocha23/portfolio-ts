@@ -1,11 +1,4 @@
-import React, {
-  FC,
-  Ref,
-  createRef,
-  useEffect,
-  MutableRefObject,
-  RefObject,
-} from "react";
+import { FC, Ref, createRef, useEffect, MutableRefObject } from "react";
 import useIntersection from "../../hooks/useIntersection";
 import { Parallax } from "react-parallax";
 import koSamuiBg from "../../Static/img/kosamui2.jpg";
@@ -23,31 +16,33 @@ interface ProjectsProps {
     sourceCode: string;
     liveDemo: string;
   }[];
-  featuredProjectRefs: Ref<HTMLDivElement[]>;
+  featuredProjectRefs: MutableRefObject<MutableRefObject<HTMLDivElement>[]>;
 }
 
 const Projects: FC<ProjectsProps> = ({ projectsData, featuredProjectRefs }) => {
-  const mutFPRef: MutableRefObject<HTMLDivElement[]> =
-    featuredProjectRefs as MutableRefObject<HTMLDivElement[]>;
-  mutFPRef.current = projectsData.map(
-    (proj) => mutFPRef.current[proj.id] ?? createRef<HTMLDivElement>()
+  featuredProjectRefs.current = projectsData.map(
+    (proj) =>
+      featuredProjectRefs.current[proj.id] ?? createRef<Ref<HTMLDivElement>>()
   );
 
-  const inViewport0 = useIntersection(mutFPRef.current[0], "-150px");
-  const inViewport1 = useIntersection(mutFPRef.current[1], "-150px");
-  const inViewport2 = useIntersection(mutFPRef.current[2], "-150px");
-  const inViewport3 = useIntersection(mutFPRef.current[3], "-150px");
-  const inViewport4 = useIntersection(mutFPRef.current[4], "-150px");
-  const inViewport5 = useIntersection(mutFPRef.current[5], "-150px");
-  const inViewport6 = useIntersection(mutFPRef.current[6], "-150px");
-  const inViewport7 = useIntersection(mutFPRef.current[7], "-150px");
-  const inViewport8 = useIntersection(mutFPRef.current[8], "-150px");
-  const inViewport9 = useIntersection(mutFPRef.current[9], "-150px");
-  const inViewport10 = useIntersection(mutFPRef.current[10], "-150px");
+  const inViewport0 = useIntersection(featuredProjectRefs.current[0], "-150px");
+  const inViewport1 = useIntersection(featuredProjectRefs.current[1], "-150px");
+  const inViewport2 = useIntersection(featuredProjectRefs.current[2], "-150px");
+  const inViewport3 = useIntersection(featuredProjectRefs.current[3], "-150px");
+  const inViewport4 = useIntersection(featuredProjectRefs.current[4], "-150px");
+  const inViewport5 = useIntersection(featuredProjectRefs.current[5], "-150px");
+  const inViewport6 = useIntersection(featuredProjectRefs.current[6], "-150px");
+  const inViewport7 = useIntersection(featuredProjectRefs.current[7], "-150px");
+  const inViewport8 = useIntersection(featuredProjectRefs.current[8], "-150px");
+  const inViewport9 = useIntersection(featuredProjectRefs.current[9], "-150px");
+  const inViewport10 = useIntersection(
+    featuredProjectRefs.current[10],
+    "-150px"
+  );
 
   useEffect(() => {
-    console.log(mutFPRef.current);
-  });
+    console.log(featuredProjectRefs.current);
+  }, [featuredProjectRefs.current]);
 
   if (inViewport0) {
     let el = document.getElementById("id-0");
@@ -135,7 +130,7 @@ const Projects: FC<ProjectsProps> = ({ projectsData, featuredProjectRefs }) => {
           .map((projectsData) => (
             <FeaturedProject
               key={`key-${projectsData.id}`}
-              ref={mutFPRef.current[projectsData.id]}
+              ref={featuredProjectRefs.current[projectsData.id]}
               pdId={projectsData.id}
               image={projectsData.image}
               title={projectsData.title}
