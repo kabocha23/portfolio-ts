@@ -1,4 +1,4 @@
-import { FC, useState, useRef } from "react";
+import { FC, useState, useRef, MutableRefObject } from "react";
 import projectsData from "./data/projectsData";
 import Navbar from "./components/Navbar/Navbar";
 import Intro from "./components/Intro/Intro";
@@ -27,7 +27,7 @@ const App: FC = () => {
   const homeRef = useRef<HTMLDivElement>(null);
   const aboutMeRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
-  const featuredProjectRefs = useRef<HTMLDivElement[]>([]);
+  const featuredProjectRefs = useRef<MutableRefObject<HTMLDivElement>[]>([]);
   const contactRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
