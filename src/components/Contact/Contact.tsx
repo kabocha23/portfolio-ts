@@ -38,7 +38,9 @@ const Contact: FC<ContactProps> = ({
           <form ref={formRef} onSubmit={sendEmail}>
             <div className="contact-name-email">
               <div className="contact-name">
-                <label id="contact-name-label">Name*</label>
+                <label htmlFor="name" id="contact-name-label">
+                  Name*
+                </label>
                 <input
                   type="text"
                   name="name"
@@ -59,7 +61,9 @@ const Contact: FC<ContactProps> = ({
                 </p>
               </div>
               <div className="contact-email">
-                <label id="contact-email-label">E-mail*</label>
+                <label htmlFor="email" id="contact-email-label">
+                  E-mail*
+                </label>
                 <input
                   type="email"
                   name="email"
@@ -80,7 +84,7 @@ const Contact: FC<ContactProps> = ({
                 </p>
               </div>
             </div>
-            <label>Message*</label>
+            <label htmlFor="message">Message*</label>
             <textarea
               id="contact-message"
               name="message"
