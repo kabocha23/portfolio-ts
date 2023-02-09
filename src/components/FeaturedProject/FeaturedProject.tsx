@@ -68,7 +68,10 @@ const FeaturedProject = forwardRef<HTMLDivElement, FeaturedProjectsProps>(
             </div>
           </div>
           <div className="project-preview">
-            <img src={require(`../../Static/img/${image}.png`)}></img>
+            <img
+              src={require(`../../Static/img/${image}.png`)}
+              alt={title}
+            ></img>
           </div>
         </div>
       </div>
