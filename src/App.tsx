@@ -23,6 +23,7 @@ const App: FC = () => {
     email: "",
     message: "",
   });
+  const [projectsOnLoad, setprojectsOnLoad] = useState<number>(5);
 
   const homeRef = useRef<HTMLDivElement>(null);
   const aboutMeRef = useRef<HTMLDivElement>(null);
@@ -56,6 +57,16 @@ const App: FC = () => {
     if (contactRef.current) {
       contactRef.current.scrollIntoView({ behavior: "smooth" });
       setIsNavExpanded(false);
+    }
+  };
+
+  const handleLoadMore = () => {
+    if (projectsOnLoad + 3 <= projectsData.length) {
+      setprojectsOnLoad(projectsOnLoad + 3);
+    } else {
+      setprojectsOnLoad(
+        projectsOnLoad + (projectsData.length - projectsOnLoad)
+      );
     }
   };
 
@@ -141,6 +152,8 @@ const App: FC = () => {
           <Projects
             projectsData={projectsData}
             featuredProjectRefs={featuredProjectRefs}
+            projectsOnLoad={projectsOnLoad}
+            handleLoadMore={handleLoadMore}
           />
         </div>
         <div className="contact-box" ref={contactRef}>
