@@ -1,4 +1,11 @@
-import { FC, Ref, createRef, useEffect, MutableRefObject } from "react";
+import {
+  FC,
+  Ref,
+  createRef,
+  useEffect,
+  MutableRefObject,
+  MouseEventHandler,
+} from "react";
 import useIntersection from "../../hooks/useIntersection";
 import { Parallax } from "react-parallax";
 import koSamuiBg from "../../Static/img/kosamui2.jpg";
@@ -17,9 +24,16 @@ interface ProjectsProps {
     liveDemo: string;
   }[];
   featuredProjectRefs: MutableRefObject<MutableRefObject<HTMLDivElement>[]>;
+  projectsOnLoad: number;
+  handleLoadMore: MouseEventHandler<HTMLButtonElement>;
 }
 
-const Projects: FC<ProjectsProps> = ({ projectsData, featuredProjectRefs }) => {
+const Projects: FC<ProjectsProps> = ({
+  projectsData,
+  featuredProjectRefs,
+  projectsOnLoad,
+  handleLoadMore,
+}) => {
   featuredProjectRefs.current = projectsData.map(
     (proj) =>
       featuredProjectRefs.current[proj.id] ?? createRef<Ref<HTMLDivElement>>()
@@ -125,7 +139,7 @@ const Projects: FC<ProjectsProps> = ({ projectsData, featuredProjectRefs }) => {
       </Parallax>
       <div className="projects-content-box">
         {projectsData
-          .slice(0)
+          .slice()
           .reverse()
           .map((projectsData) => (
             <FeaturedProject
@@ -140,9 +154,15 @@ const Projects: FC<ProjectsProps> = ({ projectsData, featuredProjectRefs }) => {
               sourceCode={projectsData.sourceCode}
               liveDemo={projectsData.liveDemo}
             />
-          ))}
-
-        <p id="more-to-come">And more in the works...</p>
+          ))
+          .slice(0, projectsOnLoad)}
+        {projectsOnLoad < 11 ? (
+          <button className="load-more-btn" onClick={handleLoadMore}>
+            Load more
+          </button>
+        ) : (
+          <p className="load-more-p">More projects are in the works!</p>
+        )}
       </div>
     </div>
   );
