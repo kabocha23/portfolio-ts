@@ -18,7 +18,6 @@
     margin-right: auto;
     border-radius: 5px;
     border-radius: 4px;
-    /* box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%); */
     box-shadow: 0 20px 80px 0 rgb(0 0 0 / 45%);
     overflow: hidden;
 }
@@ -42,7 +41,22 @@
     /* transform: translateX(-0vw); */
     transition: all 2.0s 0.1s;
 }
-
+.isVisibleOnLoad {
+    opacity: 0;
+    animation-name: fadein;
+    animation-duration: 1.0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
 
 .project-details {
     display: flex;
